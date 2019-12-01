@@ -8,7 +8,7 @@ public class Employer {
     private String value;
 
     public Employer() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
@@ -17,7 +17,7 @@ public class Employer {
         this.value = value;
     }
 
-    // Custom toString, equals, and hashCode methods:
+    // METHODS AND HASH:
 
     @Override
     public String toString() {
@@ -37,7 +37,7 @@ public class Employer {
         return Objects.hash(getId());
     }
 
-    // Getters and Setters:
+    // GETTERS AND SETTERS:
 
     public int getId() {
         return id;
@@ -46,7 +46,6 @@ public class Employer {
     public String getValue() {
         return value;
     }
-
     public void setValue(String value) {
         this.value = value;
     }

@@ -7,7 +7,6 @@ public class Job {
     // FIELDS
     private int id;
     private static int nextId = 1;
-    private String value;
 
     private String name;
     private Employer employer;
@@ -21,11 +20,12 @@ public class Job {
 
     // CONSTRUCTORS
     public Job() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -43,15 +43,12 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id &&
-                Objects.equals(name, job.name);
+        return id == job.id;
     }
-
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id);
     }
-
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
@@ -60,13 +57,6 @@ public class Job {
 
     public int getId() {
         return id;
-    }
-
-    public String getValue() {
-        return value;
-    }
-    public void setValue(String value) {
-        this.value = value;
     }
 
     public String getName() {
