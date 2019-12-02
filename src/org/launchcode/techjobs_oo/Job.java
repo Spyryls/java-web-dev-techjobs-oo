@@ -39,14 +39,21 @@ public class Job {
     // METHODS AND HASH
 
 
-    @Override
+    @Override // create array to hold job, loop through and store, if empty -> print "Data Not Available"
     public String toString() {
+        String[] jobPosting = {this.name, this.employer.getValue(), this.location.getValue(), this.positionType.getValue(), this.coreCompetency.getValue()};
+        for (int i = 0; i < jobPosting.length; i++) {
+            if(jobPosting[i].equals("")) {
+                jobPosting[i] = "Data Not Available";
+            }
+        }
+
         return  "\n Id: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
+                "Name: " + jobPosting[0] + "\n" +
+                "Employer: " + jobPosting[1] + "\n" +
+                "Location: " + jobPosting[2] + "\n" +
+                "Position Type: " + jobPosting[3] + "\n" +
+                "Core Competency: " + jobPosting[4] + "\n";
     }
 
     @Override
