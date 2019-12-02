@@ -38,6 +38,17 @@ public class Job {
     //  match.
     // METHODS AND HASH
 
+
+    @Override
+    public String toString() {
+        return  "\n Id: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
