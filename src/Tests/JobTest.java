@@ -43,7 +43,7 @@ public class JobTest {
         assertFalse(test_job2.equals(test_job3));
     }
 
-    @Test // test that the posting has blank lines to separate job elements
+    @Test // test that the posting has all job elements and that blank lines separate them
     public void testSpacingBetweenJobElements() {
         String pGuy = test_job2.toString();
         assertTrue(pGuy.contains("Name: Painter Guy\n"));
