@@ -48,7 +48,7 @@ public class Job {
             }
         }
 
-        return  "\n Id: " + id + "\n" +
+        return  "\nId: " + id + "\n" +
                 "Name: " + jobPosting[0] + "\n" +
                 "Employer: " + jobPosting[1] + "\n" +
                 "Location: " + jobPosting[2] + "\n" +
