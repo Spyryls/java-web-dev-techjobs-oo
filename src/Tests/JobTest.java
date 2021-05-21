@@ -4,9 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class JobTest {
 
@@ -32,15 +30,16 @@ public class JobTest {
     @Test // test that each field is present
     public void testJobConstructorSetsAllFields() {
         assertTrue(test_job1.getName().contains("Brewer Friend"));
-        assertTrue(test_job2.getEmployer() instanceof Employer);
-        assertTrue(test_job2.getLocation() instanceof Location);
-        assertTrue(test_job1.getPositionType() instanceof PositionType);
-        assertTrue(test_job1.getCoreCompetency() instanceof CoreCompetency);
+        assertEquals("Paint Ninja Painting", test_job2.getEmployer().getValue());
+        assertNotNull(test_job2.getLocation());
+        assertNotNull(test_job1.getPositionType());
+        assertNotNull(test_job1.getCoreCompetency());
     }
 
     @Test // test that two similar jobs have different ids
     public void testJobsEquality() {
-        assertFalse(test_job2.equals(test_job3));
+        assertNotEquals(test_job2, test_job3);
+        assertNotEquals(test_job2, test_job3);
     }
 
     @Test // test that the posting has all job elements and that blank lines separate them
@@ -55,7 +54,7 @@ public class JobTest {
 
     @Test
     public void testEmptyJobField() {
-        assertTrue(test_job4.toString().contains("Data Not Available"));
+        assertTrue(test_job4.getEmployer().toString().contains("Data Not Available"));
     }
 
 }

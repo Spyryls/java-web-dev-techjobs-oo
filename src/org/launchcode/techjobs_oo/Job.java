@@ -43,11 +43,10 @@ public class Job {
     public String toString() {
         String[] jobPosting = {this.name, this.employer.getValue(), this.location.getValue(), this.positionType.getValue(), this.coreCompetency.getValue()};
         for (int i = 0; i < jobPosting.length; i++) {
-            if(jobPosting[i].equals("")) {
+            if(jobPosting[i].equals(""))
                 jobPosting[i] = "Data Not Available";
-            }
         }
-
+    
         return  "\nId: " + id + "\n" +
                 "Name: " + jobPosting[0] + "\n" +
                 "Employer: " + jobPosting[1] + "\n" +
